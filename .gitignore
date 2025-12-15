@@ -40,6 +40,7 @@ Thumbs.db
 .obsidian/themes/
 .obsidian/plugins/*
 !.obsidian/plugins/obsidian-metadata-tool/
+.obsidian/plugins/obsidian-metadata-tool/data.json
 
 # Test notes (uncomment if you don't want to track them)
 # Sample*.md
