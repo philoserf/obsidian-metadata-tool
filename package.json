@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-plugin-template",
+  "name": "obsidian-metadata-tool",
   "version": "1.0.0",
-  "description": "A minimal template for Obsidian plugins using Bun",
+  "description": "Automatically generate metadata for Obsidian notes using Claude AI",
   "main": "dist/main.js",
   "type": "module",
   "scripts": {
@@ -18,9 +18,11 @@
   "keywords": [
     "obsidian",
     "obsidian-plugin",
-    "template"
+    "metadata",
+    "anthropic",
+    "claude"
   ],
-  "author": "",
+  "author": "Mark Ayers",
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "9.17.0",
@@ -33,5 +35,8 @@
     "obsidian": "1.10.3",
     "prettier": "3.4.2",
     "typescript": "5.7.2"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2"
   }
 }
