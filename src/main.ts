@@ -1,15 +1,23 @@
-import { Plugin, PluginSettingTab } from "obsidian";
+import { Plugin } from "obsidian";
+import { DEFAULT_SETTINGS, MetadataToolSettings } from "./settings";
+import { MetadataToolSettingTab } from "./settingsTab";
+import { generateMetadata } from "./metadata";
 
-type PluginSettings = Record<string, never>;
-
-const DEFAULT_SETTINGS: PluginSettings = {};
-
-export default class ExamplePlugin extends Plugin {
-  settings: PluginSettings = DEFAULT_SETTINGS;
+export default class MetadataToolPlugin extends Plugin {
+  settings: MetadataToolSettings = DEFAULT_SETTINGS;
 
   async onload(): Promise<void> {
     await this.loadSettings();
-    this.addSettingTab(new ExampleSettingTab(this.app, this));
+
+    this.addCommand({
+      id: "generate-metadata",
+      name: "Generate metadata for current note",
+      callback: async () => {
+        await generateMetadata(this.app, this.settings);
+      },
+    });
+
+    this.addSettingTab(new MetadataToolSettingTab(this.app, this));
   }
 
   async loadSettings(): Promise<void> {
@@ -18,18 +26,5 @@ export default class ExamplePlugin extends Plugin {
 
   async saveSettings(): Promise<void> {
     await this.saveData(this.settings);
-  }
-}
-
-class ExampleSettingTab extends PluginSettingTab {
-  plugin: ExamplePlugin;
-
-  constructor(app: Plugin["app"], plugin: ExamplePlugin) {
-    super(app, plugin);
-    this.plugin = plugin;
-  }
-
-  display(): void {
-    this.containerEl.empty();
   }
 }

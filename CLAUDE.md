@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Minimal template for Obsidian plugins using Bun as the build tool and runtime.
+Obsidian plugin for generating metadata using the Anthropic Claude API. The project root serves as both the development environment and a test Obsidian vault.
 
 ## Development Commands
 
@@ -12,6 +12,7 @@ Minimal template for Obsidian plugins using Bun as the build tool and runtime.
 
 ```bash
 bun install
+./setup-vault.sh  # Sets up the test vault (optional, already configured)
 ```
 
 ### Build and Development
@@ -50,9 +51,11 @@ bun run version  # Update manifest.json and versions.json from package.json vers
 
 ### Plugin Structure
 
-- **Main class**: `ExamplePlugin` extends Obsidian's `Plugin` class
-- **Settings**: Type-safe settings with `loadSettings()` and `saveSettings()` methods
-- **Settings tab**: `ExampleSettingTab` extends `PluginSettingTab` for UI configuration
+- **Main class**: `MetadataToolPlugin` extends Obsidian's `Plugin` class
+- **Settings**: Type-safe settings interface in [src/settings.ts](src/settings.ts)
+- **Settings tab**: `MetadataToolSettingTab` provides comprehensive UI in [src/settingsTab.ts](src/settingsTab.ts)
+- **Metadata generation**: Claude AI integration in [src/metadata.ts](src/metadata.ts)
+- **Utilities**: API calls and helper functions in [src/utils.ts](src/utils.ts)
 
 ### Configuration Files
 
@@ -84,3 +87,15 @@ git push origin 1.0.0
 - Module resolution: bundler (Bun-style)
 - Strict mode enabled
 - No emit (bundler handles output)
+
+## Test Vault
+
+This project root is configured as an Obsidian vault for testing:
+
+- Plugin files are symlinked from `.obsidian/plugins/obsidian-metadata-tool/` to build output
+- Sample notes are provided for testing metadata generation
+- Open this folder as a vault in Obsidian to test the plugin
+- Changes rebuild automatically in watch mode (`bun run dev`)
+- Reload Obsidian (Cmd/Ctrl + R) to see changes
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed development workflow.

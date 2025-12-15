@@ -26,3 +26,21 @@ Thumbs.db
 
 # Claude Code
 .claude/settings.local.json
+
+# Obsidian vault files (except plugins we're developing)
+.obsidian/workspace*.json
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/hotkeys.json
+.obsidian/core-plugins.json
+.obsidian/community-plugins.json
+.obsidian/graph.json
+.obsidian/canvas.json
+.obsidian/snippets/
+.obsidian/themes/
+.obsidian/plugins/*
+!.obsidian/plugins/obsidian-metadata-tool/
+.obsidian/plugins/obsidian-metadata-tool/data.json
+
+# Test notes (uncomment if you don't want to track them)
+# Sample*.md
