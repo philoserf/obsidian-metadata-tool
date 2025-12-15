@@ -6,7 +6,6 @@ tags:
   - markdown
   - productivity
 description: An introduction to Obsidian, a powerful knowledge base tool that uses local Markdown files for note-taking and personal knowledge management with features like backlinks, graph view, and plugins.
-title: "Getting Started with Obsidian: A Guide to Personal Knowledge Management"
 ---
 
 # Getting Started with Obsidian

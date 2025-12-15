@@ -20,6 +20,7 @@ The plugin is **fully built and ready to test**! It's already configured in this
 ⚠️ **Important**: You need an Anthropic API key to use this plugin.
 
 1. Get an API key:
+
    - Go to [console.anthropic.com](https://console.anthropic.com)
    - Sign up or log in
    - Add billing information (Claude API requires a paid account)
@@ -41,8 +42,7 @@ Three sample notes are ready for testing:
 3. Type "metadata" and select "Generate metadata for current note"
 4. Watch as the plugin:
    - Analyzes the content
-   - Generates tags, category, description, and title
-   - Adds timestamps
+   - Generates tags, description, and title
    - Updates the frontmatter
 
 The note should now have frontmatter like this:
@@ -53,11 +53,8 @@ tags:
   - obsidian
   - knowledge-management
   - note-taking
-category: Reference
 description: A guide to getting started with Obsidian's key features
 title: Getting Started with Obsidian
-created: 2025-12-14
-updated: 2025-12-14 21:50:00
 ---
 ```
 
@@ -97,17 +94,12 @@ Each should generate appropriate metadata based on its content.
 #### Field Names
 
 - Customize what the frontmatter fields are called
-- Default: tags, category, description, title, created, updated
+- Default: tags, description, title
 
 #### Prompts
 
 - Customize instructions for each type of metadata
-- Tell Claude how to select tags, categorize, summarize, etc.
-
-#### Categories
-
-- Define your own list of categories
-- The plugin will choose the best fit from your list
+- Tell Claude how to select tags, write descriptions, and create titles
 
 #### Tags
 
