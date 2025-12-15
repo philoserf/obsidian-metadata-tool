@@ -4,13 +4,12 @@ Automatically generate metadata for your Obsidian notes using Claude AI from Ant
 
 ## Features
 
-- Generate tags, categories, descriptions, and titles for your notes using Claude AI
+- Generate tags, descriptions, and titles for your notes using Claude AI
 - Extract and manage existing tags from your vault
 - Customize field names and prompts to match your workflow
 - Add custom metadata fields
-- Automatic timestamp tracking (created/updated)
 - Content truncation options to optimize API costs
-- Support for multiple Claude models
+- Support for multiple Claude models (Sonnet 4.5, Opus 4.5, Sonnet 3.7, Haiku 3.5)
 
 ## Installation
 
@@ -55,10 +54,8 @@ Copy `manifest.json`, `main.js` (from `dist/`), and `styles.css` to your vault's
 #### Metadata Fields
 
 - Tags: Extract existing tags or define custom ones
-- Category: Define categories and selection prompt
 - Description: Customize summary generation
 - Title: Auto-generate titles for notes
-- Timestamps: Track creation and update times
 - Custom Fields: Add any additional metadata fields
 
 ## Usage
@@ -67,8 +64,7 @@ Copy `manifest.json`, `main.js` (from `dist/`), and `styles.css` to your vault's
 2. Run the command "Generate metadata for current note" (Cmd/Ctrl + P)
 3. The plugin will:
    - Analyze your note content
-   - Generate appropriate tags, category, description, and title
-   - Add timestamps
+   - Generate appropriate tags, description, and title
    - Update the frontmatter with the generated metadata
 
 ## Example
@@ -87,11 +83,8 @@ tags:
   - gardening
   - techniques
   - plants
-category: Reference
 description: A comprehensive guide to various gardening techniques and best practices
 title: Gardening Techniques Guide
-created: 2025-12-14
-updated: 2025-12-14 10:30:45
 ---
 
 This is my note about gardening techniques...
